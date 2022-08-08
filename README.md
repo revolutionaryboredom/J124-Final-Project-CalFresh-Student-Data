@@ -94,6 +94,9 @@ As shown above, UC Merced had the highest percentage (21.5%) of undergraduate st
 
 <img width="325" alt="Q5_1" src="https://user-images.githubusercontent.com/74481179/183431831-e00e3956-00e2-425d-96ea-eae145dc0cd5.png">
 
+**Answer:** 
+The Central Valley had the highest percentage (17.0%) of its campus' student bodies enrolled in CalFresh while the Bay Area had the lowest (6.5%)
+
 ### **Question 4 –** Of the undergraduate students enrolled in CalFresh in the UC system and the CC system, what percentage are Cal Grant recipients? What percentage are Pell Grant recipients? 
 
 **Steps:** 
