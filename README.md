@@ -8,10 +8,10 @@ In California, the outlook is no different. A report by the Legislative Analyst�
 
 According to the 2020 CalFresh Student Data Report by the California Department of Social Services, only as little as 18% of eligible college students are enrolled in the state’s SNAP (Supplemental Nutrition Assistance Program), CalFresh. A range of roadblocks prevents students in the state from accessing CalFresh (the SNAP for California), from lack of knowledge about their eligibility to difficulty navigating the application process or being ineligible to receive benefits. Researchers with the Food Research & Action Center and other food access agencies point to outdated SNAP eligibility requirements as a major obstacle to enrolling in CalFresh, such as the primary requirement that a student work at least 20 hours in order to receive benefits. Although there are numerous exemptions from this requirement that allow students to enroll in CalFresh, the overall enrollment percentages for college students in the program remain low.
 
-The purpose of the story is to shed light on the CalFresh eligibility requirements that many students meet without even knowing it. It also aims to highlight who CalFresh reaches across California colleges and universities and answer questions such as, "Which demographic groups are most likely to be receiving CalFresh benefits?"
+The purpose of the story is to shed light on the CalFresh eligibility requirements that many students meet without even knowing it. It also aims to highlight who CalFresh reaches across California colleges and universities and answer questions such as, "Which groups make up the largest percentage of CalFresh recipients," or "Which demographic has the highest CalFresh enrollment?"
 
 ## Sourcing – the _What_ and the _Who_ 
-#### Primary Data Source
+### Primary Data Source
 + **[California Community College and University of California student participation in CalFresh food benefits](https://www.capolicylab.org/wp-content/uploads/2022/03/Student-Participation-in-CalFresh.pdf)**
     * This is the primary document from which the datasets in this project were parsed.
     
@@ -29,9 +29,9 @@ The purpose of the story is to shed light on the CalFresh eligibility requiremen
 
 ## Data Visualization 
 
-The best method of visualizing this specific data is a bar chart since it has few categories and several items that must be compared. In this instance, the percentage of undergraduate students enrolled in CalFresh is the point of comparison. 
+The best method of visualizing this specific data (UC campus CalFresh enrollment) is a bar chart since it has few categories and several items that must be compared. In this instance, the percentage of undergraduate students enrolled in CalFresh is the point of comparison. 
 
-[![A bar chart of undergraduate enrollment of CalFresh](https://user-images.githubusercontent.com/74481179/183398666-d5e28a1e-260f-461b-8e6e-51c76af531c1.png)](https://www.datawrapper.de/_/p7POd/)
+[![A bar chart of undergraduate enrollment of CalFresh!](https://user-images.githubusercontent.com/74481179/183433661-d840e76b-2e79-457e-b588-0da780719c5b.png)](https://www.datawrapper.de/_/p7POd/)
 
 ## Pre-Analysis Steps 
 
@@ -85,7 +85,16 @@ As shown above, the percent changes (increase) were 8% for community college stu
 **Answer:**
 As shown above, UC Merced had the highest percentage (21.5%) of undergraduate students enrolled in CalFresh while UC Riverside had the lowest (7.8%).
 
-### **Question 3 –** Of the undergraduate students enrolled in CalFresh in the UC system and the CC system, what percentage are Cal Grant recipients? What percentage are Pell Grant recipients? 
+### **Question 3 –** Which region of California had the highest percentage of CC students enrolled in CalFresh? The lowest?
+
+**Steps:** 
+1)I referred to the CC "Region" Dataset and I followed the steps I used to answer Question 2 for this question. To start, I copied the values for “Region” into a new sheet, including the values for the student counts (total and CalFresh), as well as the values for “% of student body enrolled in CalFresh”. I then moved “Region” into the first row. 
+
+2)I then sorted the data by Row C from A-Z to view the values in ascending order.
+
+<img width="325" alt="Q5_1" src="https://user-images.githubusercontent.com/74481179/183431831-e00e3956-00e2-425d-96ea-eae145dc0cd5.png">
+
+### **Question 4 –** Of the undergraduate students enrolled in CalFresh in the UC system and the CC system, what percentage are Cal Grant recipients? What percentage are Pell Grant recipients? 
 
 **Steps:** 
 1) To answer this question, I needed to divide the number of Cal Grant recipient students enrolled in CalFresh by the total number of students enrolled in CalFresh. To do this, I referred to the “Financial aid status” data and copied it into a new sheet. I also made sure to keep the overall total student count and the overall total number of students enrolled in CalFresh. 
@@ -104,21 +113,28 @@ As shown above, UC Merced had the highest percentage (21.5%) of undergraduate st
 **Answer:** 
 Within the UC system, 46.4% of students enrolled in Cal Fresh are Cal Grant recipients and 80% of them are Pell Grant recipients. Within the CC system, 15.5% of them are Cal Grant recipients and 61.3% of them are Pell Grant recipients. 
 
-### **Question 4:** Across the UC campuses, which race/ethnicity is most likely to be receiving CalFresh benefits?
+### **Question 5:** Across the UC campuses, which race/ethnicity makes up the largest portion of CalFresh recipients? What percentage of the number of students enrolled in CalFresh (both undergrad and grad) do they account for?
 
 **Steps:** 
-1) For this question, I referred to the UC undergraduate and graduate "Race/Ethnicity" data.  
+1) For this question, I referred to the UC undergraduate and graduate "Race/Ethnicity" data. For this project, I did not use separate datapoints for the ethnicities listed under "Asian American/Asian/Pacific Islander". To start, I began by creating a new sheet with the undergraduate "Race/Ethnicity" data. I renamed the column "NUMBER OF STUDENTS
+ENROLLED IN CALFRESH" to "NUMBER OF UNDERGRADUATE STUDENTS ENROLLED IN CALFRESH". I then duplicated this column to the right and renamed it "NUMBER  OF GRADUATE STUDENTS ENROLLED IN CALFRESH" in order to specify between groups.
+2) To join the undergraduate and graduate data, I used "VLOOKUP" like so: 
 
+<img width="599" alt="Q4_2" src="https://user-images.githubusercontent.com/74481179/183423197-d008db81-0a23-4ee1-9aff-add86a8fe88e.png">
+<img width="651" alt="Q4" src="https://user-images.githubusercontent.com/74481179/183423363-df60a506-118f-46c5-aafb-1448e9c3cbf1.png">
 
+3) I followed the same steps to get the rest of the data into the table.
 
+<img width="624" alt="Q4_2" src="https://user-images.githubusercontent.com/74481179/183423482-f988177e-0b56-4dde-bfe2-5532536e5d24.png">
 
+4) I then inserted a pivot table of the data to be able to easily toggle back and forth between values. I also found that it allowed me to find percentages much easier since it didn't require me to hide or delete certain columns. It also provided the totals. 
 
-2) Since I needed to calculate a percentage of all undergraduate students, I had to use the sum of Cal Grant recipients for both CCs and UCs as well as the sum of the total undergraduate student counts for both school systems. To do this, I used the "SUM" function: 
-<img width="361" alt="Q4_8" src="https://user-images.githubusercontent.com/74481179/183414942-8a5a2b7d-72af-4d08-9fc3-d3c87235c12d.png">
+5) To get the total number of students enrolled for each race/ethnicity, I used the "SUM" function to add together the values of the undergraduate and graduate columns. I also added up the totals provided by the pivot table to find the grand total of ALL students across UC campuses who are enrolled in CalFresh. I then divided each of the sums by the aforementioned grand total to find percentages for each demographic. The final dataset appeared as such: 
 
-3) Now knowing the sums, I divided the total number of Cal Grant recipients by the total number of undergraduate students across school systems: 
+<img width="793" alt="Q4_3" src="https://user-images.githubusercontent.com/74481179/183428609-b975b1ea-e9bc-4449-85ea-2250c036751c.png">
 
-<img width="391" alt="Q4_10" src="https://user-images.githubusercontent.com/74481179/183415289-c5bb9d16-c2bb-4949-aeda-bec6cd3fb42a.png">
+**Answer:**
+As shown, Hispanic/Latino/Chicano students made up the greatest portion of the total (undergrad and grad) number of students enrolled in CalFresh, with a percentage of ~43%. 
+ 
 
-**Answer:** Across
 
